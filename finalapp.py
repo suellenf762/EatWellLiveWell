@@ -81,7 +81,7 @@ def display_page(page_num):
         signs = [
             "Frequent urination :toilet:", "Increased thirst :potable_water:", "Fatigue	:sleeping:", "Blurred vision :eyeglasses:",
             "Slow healing of cuts and wounds :adhesive_bandage:", "Tingling numbness or pain in hands or feet :wave:",
-            "Patches of darker skin", "Itching and yeast infections :mushroom:"
+            "Patches of darker skin :black_medium_square:", "Itching and yeast infections :mushroom:"
         ]
 
         st.markdown("\n".join([f"- {sign}" for sign in signs]))
