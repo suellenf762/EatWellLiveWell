@@ -87,7 +87,7 @@ def display_page(page_num):
         st.markdown("\n".join([f"- {sign}" for sign in signs]))
 
         st.write(":large_red_square: If you have recently started experiencing these symptoms, it is recommended that you seek medical advice as soon as possible.")
-
+        st.link_button("To find a GP (General Practitioner) please click here", "https://www.healthdirect.gov.au/australian-health-services")
         if st.button("NEXT"):
             st.session_state["page"] = 3
 
