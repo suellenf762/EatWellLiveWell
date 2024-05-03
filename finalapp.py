@@ -54,7 +54,8 @@ def set_background(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 def display_page(page_num):
     if page_num == 1:
-        set_background('background.png')
+        ##set_background('background.png')
+        st.image('Header.png')
         st.title("Eat Well Live Well")
         st.markdown(
             '<p class="big-font">This app will be used to assess if you have any dietary risk factors for diabetes.</p>',
