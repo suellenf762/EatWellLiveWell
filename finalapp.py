@@ -64,7 +64,7 @@ def display_page(page_num):
             '<p class="big-font">The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.</p>',
             unsafe_allow_html=True)
         name = st.text_input("Please enter your name:")
-        gender = st.radio('Gender Preference', ['Male', 'Female', 'Other'])
+        gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
         submit_page1 = st.button("Submit")
 
         if submit_page1:
