@@ -79,8 +79,8 @@ def display_page(page_num):
         st.write("The early signs and symptoms of Type 2 Diabetes can include:")
 
         signs = [
-            "Frequent urination :toilet:", "Increased thirst :potable_water:", "Fatigue", "Blurred vision",
-            "Slow healing of cuts and wounds", "Tingling numbness or pain in hands or feet",
+            "Frequent urination :toilet:", "Increased thirst :potable_water:", "Fatigue	:sleeping:", "Blurred vision :eyeglasses:",
+            "Slow healing of cuts and wounds :adhesive_bandage:", "Tingling numbness or pain in hands or feet",
             "Patches of darker skin", "Itching and yeast infections"
         ]
 
