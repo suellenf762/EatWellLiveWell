@@ -64,11 +64,12 @@ def display_page(page_num):
             '<p class="big-font">The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.</p>',
             unsafe_allow_html=True)
         name = st.text_input("Please enter your name:")
+        st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
         submit_page1 = st.button("Submit")
 
         if submit_page1:
-            st.session_state["name"] = name
+            ##st.session_state["name"] = name
             st.session_state["page"] = 2  # Move to page 2 after submission
 
     elif page_num == 2:
