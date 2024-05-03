@@ -52,6 +52,11 @@ def set_background(png_file):
     </style>
     ''' % bin_str
     st.markdown(page_bg_img, unsafe_allow_html=True)
+
+def click_button():
+    st.session_state.clicked = True
+
+
 def display_page(page_num):
     if page_num == 1:
         ##set_background('background.png')
@@ -66,7 +71,7 @@ def display_page(page_num):
         name = st.text_input("Please enter your name:")
         st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
-        submit_page1 = st.button("Submit")
+        submit_page1 = st.button("Submit", on_click=click_button)
 
         if submit_page1:
             ##st.session_state["name"] = name
