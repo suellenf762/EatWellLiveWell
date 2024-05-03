@@ -56,7 +56,7 @@ def display_page(page_num):
     if page_num == 1:
         ##set_background('background.png')
         st.image('Header.png')
-        st.title("Eat Well Live Well")
+        ##st.title("Eat Well Live Well")
         st.markdown(
             '<p class="big-font">This app will be used to assess if you have any dietary risk factors for diabetes.</p>',
             unsafe_allow_html=True)
@@ -72,8 +72,9 @@ def display_page(page_num):
             st.session_state["page"] = 2  # Move to page 2 after submission
 
     elif page_num == 2:
-        set_background('background.png')
-        st.title("Eat Well Live Well")
+        ##set_background('background.png')
+        st.image('Header.png')
+        ##st.title("Eat Well Live Well")
         st.write(f"Hi {st.session_state['name']}!")
         st.write("The early signs and symptoms of Type 2 Diabetes can include:")
 
@@ -91,8 +92,9 @@ def display_page(page_num):
             st.session_state["page"] = 3
 
     elif page_num == 3:
-        set_background('background.png')
-        st.title("Eat Well Live Well")
+        ##set_background('background.png')
+        st.image('Header.png')
+        ##st.title("Eat Well Live Well")
         name = st.session_state["name"]
         st.write(f"{name}, what do you eat each day?")
 
@@ -130,8 +132,9 @@ def display_page(page_num):
             st.session_state["page"] = 4  # Move to results page
 
     elif page_num == 4:
-        set_background('background.png')
-        st.title("Eat Well Live Well")
+        ##set_background('background.png')
+        st.image('Header.png')
+        ##st.title("Eat Well Live Well")
         st.write("Your predicted risk of developing Type 2 Diabetes:")
         st.write(st.session_state["results"])
         st.button("Restart")
