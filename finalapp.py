@@ -65,9 +65,7 @@ def display_page(page_num):
         st.markdown(
             '<p class="big-font">This app will be used to assess if you have any dietary risk factors for diabetes.</p>',
             unsafe_allow_html=True)
-        st.markdown(
-            '<p class="big-font">:warning: The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.</p>',
-            unsafe_allow_html=True)
+        st.write(":warning: The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.")
         name = st.text_input("Please enter your name:")
         st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
