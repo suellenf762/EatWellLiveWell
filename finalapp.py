@@ -66,6 +66,7 @@ def display_page(page_num):
             '<p class="big-font">This application will be used to assess if you have any dietary risk factors for diabetes. It will ask you a series of questions regarding the types and amount of food you eat to provide a dietary risk assessment for type 2 diabetes. </p>',
             unsafe_allow_html=True)
         st.write("Getting treated for diabetes early can prevent the following life altering diseases:")
+        st.image('complications.png')
         st.write(":warning: The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.")
         st.write(":file_folder: The information entered in the application will not be stored or used for any other purposes.")
         name = st.text_input("Please enter your name:")
