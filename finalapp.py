@@ -66,6 +66,7 @@ def display_page(page_num):
             '<p class="big-font">This app will be used to assess if you have any dietary risk factors for diabetes.</p>',
             unsafe_allow_html=True)
         st.write(":warning: The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.")
+        st.write(":file_folder: The information entered in the application will not be stored or used for any other purposes.")
         name = st.text_input("Please enter your name:")
         st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
