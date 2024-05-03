@@ -86,7 +86,7 @@ def display_page(page_num):
 
         st.markdown("\n".join([f"- {sign}" for sign in signs]))
 
-        st.write(":medical_symbol: If you have recently started experiencing these symptoms, it is recommended that you seek medical advice as soon as possible.")
+        st.write(":large_red_square: If you have recently started experiencing these symptoms, it is recommended that you seek medical advice as soon as possible.")
 
         if st.button("NEXT"):
             st.session_state["page"] = 3
