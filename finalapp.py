@@ -111,19 +111,19 @@ def display_page(page_num):
             "Whole grains", "Processed meats", "Unprocessed meats", "Sweetened beverages",
             "Fruit juice", "Saturated fats", "Unsaturated fats", "Added sugars", "Added salts", "Dairy"
         ]
-      serves_per_day_fruit = {}
-    
-            st.image("fruitserve.png",caption="Serving Size Fruit")
-            serves = st.select_slider(f"How many serves of fruit per day?", options=["0-1", "2-3", "4 or more"],
-                                      help="hep")
-            serves_per_day_fruit= float(serves[:1])
-            serves_per_day_fruit
-    
-            st.image("starchyvegserve.png",caption="Serving Size Starchy Vegetables")
-            serves = st.select_slider(f"How many serves of starchy vegetables per day?", options=["0-1", "2-3", "4 or more"],
-                                      help="hep")
-            serves_per_day_starchyveg= float(serves[:1])
-            serves_per_day_starchyveg
+        serves_per_day_fruit = {}
+
+        st.image("fruitserve.png",caption="Serving Size Fruit")
+        serves = st.select_slider(f"How many serves of fruit per day?", options=["0-1", "2-3", "4 or more"],
+                                  help="hep")
+        serves_per_day_fruit= float(serves[:1])
+        serves_per_day_fruit
+
+        st.image("starchyvegserve.png",caption="Serving Size Starchy Vegetables")
+        serves = st.select_slider(f"How many serves of starchy vegetables per day?", options=["0-1", "2-3", "4 or more"],
+                                  help="hep")
+        serves_per_day_starchyveg= float(serves[:1])
+        serves_per_day_starchyveg
 
 
 
