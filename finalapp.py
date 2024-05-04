@@ -164,6 +164,12 @@ def display_page(page_num):
         serves_per_day_swbeverage= float(serves[:1])
         serves_per_day_swbeverage
 
+        st.image("fjuiceserve.png",caption="Serving Size Fruit Juice")    
+        serves = st.select_slider(f"How many serves of Fruit Juice per day?", options=["0-1", "2-3", "4 or more"],
+                                  help="hep")
+        serves_per_day_fjuice= float(serves[:1])
+        serves_per_day_fjuice
+
 
         # Add a button to submit selection
         if st.button("Submit"):
