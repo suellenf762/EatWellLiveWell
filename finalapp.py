@@ -127,7 +127,7 @@ def display_page(page_num):
 
 
 
-        st.image("dairyserve.png")
+        st.image("dairyserve.png",caption="Serving Size Dairy")
         serves = st.select_slider(f"How many serves of dairy per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_dairy= float(serves[:1])
