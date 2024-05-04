@@ -134,19 +134,19 @@ def display_page(page_num):
         serves_per_day_dairy
 
 
-        st.image("refgrainserve.png",caption="Serving Size Dairy")
+        st.image("refgrainserve.png",caption="Serving Size Refined Grains")
         serves = st.select_slider(f"How many serves of refined grains per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_refgrain= float(serves[:1])
         serves_per_day_refgrain
 
-        st.image("prmeatserve.png",caption="Serving Size Dairy")
+        st.image("prmeatserve.png",caption="Serving Size Processed Meats")
         serves = st.select_slider(f"How many serves of processed meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_prmeat= float(serves[:1])
         serves_per_day_prmeat
 
-        st.image("eggserve.png",caption="Serving Size Dairy")
+        st.image("eggserve.png",caption="Serving Size Eggs")
         serves = st.select_slider(f"How many serves of eggs per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_egg= float(serves[:1])
