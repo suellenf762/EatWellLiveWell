@@ -152,7 +152,7 @@ def display_page(page_num):
         serves_per_day_egg= float(serves[:1])
         serves_per_day_egg
 
-        st.image("unprmeatserve.png",caption="Serving Size Unprocessed Meat")
+        st.image("unprmeatserve.png",caption="Serving Size Unprocessed Meat")    
         serves = st.select_slider(f"How many serves of Unprocessed Meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_unprmeat= float(serves[:1])
