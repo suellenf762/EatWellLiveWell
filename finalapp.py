@@ -140,7 +140,7 @@ def display_page(page_num):
         serves_per_day_refgrain= float(serves[:1])
         serves_per_day_refgrain
 
-       st.image("prmeatserve.png",caption="Serving Size Dairy")
+        st.image("prmeatserve.png",caption="Serving Size Dairy")
         serves = st.select_slider(f"How many serves of processed meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_prmeat= float(serves[:1])
