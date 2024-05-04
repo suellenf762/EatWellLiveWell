@@ -111,20 +111,27 @@ def display_page(page_num):
             "Whole grains", "Processed meats", "Unprocessed meats", "Sweetened beverages",
             "Fruit juice", "Saturated fats", "Unsaturated fats", "Added sugars", "Added salts", "Dairy"
         ]
+      serves_per_day_fruit = {}
+    
+            st.image("fruitserve.png",caption="Serving Size Fruit")
+            serves = st.select_slider(f"How many serves of fruit per day?", options=["0-1", "2-3", "4 or more"],
+                                      help="hep")
+            serves_per_day_fruit= float(serves[:1])
+            serves_per_day_fruit
+    
+            st.image("starchyvegserve.png",caption="Serving Size Starchy Vegetables")
+            serves = st.select_slider(f"How many serves of starchy vegetables per day?", options=["0-1", "2-3", "4 or more"],
+                                      help="hep")
+            serves_per_day_starchyveg= float(serves[:1])
+            serves_per_day_starchyveg
 
-        # Display checkboxes for food options
-        selected_options = st.multiselect("Select options:", food_options, default=[])
 
-        if len(selected_options) < 3:
-            st.warning("Please select up to 3 options.")
 
-        # Dictionary to store serves per day for each selected option
-        serves_per_day = {}
-
-        # For each selected option, prompt user to input serves per day
-        for option in selected_options:
-            serves = st.select_slider(f"How many serves of {option} per day?", options=["0-1", "2-3", "4 or more"])
-            serves_per_day[option] = serves
+        st.image("dairyserve.png")
+        serves = st.select_slider(f"How many serves of dairy per day?", options=["0-1", "2-3", "4 or more"],
+                                  help="hep")
+        serves_per_day_dairy= float(serves[:1])
+        serves_per_day_dairy
 
         # Add a button to submit selection
         if st.button("Submit"):
