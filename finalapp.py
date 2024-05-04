@@ -133,6 +133,13 @@ def display_page(page_num):
         serves_per_day_dairy= float(serves[:1])
         serves_per_day_dairy
 
+
+        st.image("refgrainserve.png",caption="Serving Size Dairy")
+        serves = st.select_slider(f"How many serves of refined grains per day?", options=["0-1", "2-3", "4 or more"],
+                                  help="hep")
+        serves_per_day_refgrain= float(serves[:1])
+        serves_per_day_refgrain
+
         # Add a button to submit selection
         if st.button("Submit"):
             # Calculate risk factor based on servings per day
