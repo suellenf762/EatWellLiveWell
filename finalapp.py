@@ -115,7 +115,7 @@ def display_page(page_num):
         ]
         serves_per_day_fruit = {}
 
-       st.image("fruitserve.png", caption="Serving Size Fruit")
+        st.image("fruitserve.png", caption="Serving Size Fruit")
         serves = st.select_slider(f"How many serves of fruit per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         serves_per_day_fruit = float(serves[:1])*150
