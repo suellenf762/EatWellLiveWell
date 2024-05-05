@@ -49,7 +49,7 @@ def set_background(png_file):
     page_bg_img = '''
     <style>
     .stApp {
-    background-image: url("data:image/png;base64,%s");
+    background-image: url("data:png;base64,%s");
     background-size: cover;
     }
     </style>
@@ -64,13 +64,13 @@ def click_button():
 def display_page(page_num):
     if page_num == 1:
         ##set_background('background.png')
-        st.image('image\Header.png')
+        st.image('Header.png')
         ##st.title("Eat Well Live Well")
         st.markdown(
             '<p class="big-font">This application will be used to assess if you have any dietary risk factors for diabetes. It will ask you a series of questions regarding the types and amount of food you eat to provide a dietary risk assessment for type 2 diabetes. </p>',
             unsafe_allow_html=True)
         st.write("Getting treated for diabetes early can prevent the following life altering diseases:")
-        st.image('image/complications.png')
+        st.image('complications.png')
         st.write(
             ":warning: The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.")
         st.write(
@@ -86,7 +86,7 @@ def display_page(page_num):
 
     elif page_num == 2:
         ##set_background('background.png')
-        st.image('image\Header.png')
+        st.image('Header.png')
         ##st.title("Eat Well Live Well")
         st.write(f"Hi {st.session_state['name']}!")
         st.write("The early signs and symptoms of Type 2 Diabetes can include:")
@@ -109,7 +109,7 @@ def display_page(page_num):
 
     elif page_num == 3:
         ##set_background('background.png')
-        st.image('image/Header.png')
+        st.image('Header.png')
         ##st.title("Eat Well Live Well")
         name = st.session_state["name"]
         st.write(f"{name}, what do you eat each day?")
@@ -131,14 +131,14 @@ def display_page(page_num):
 
         ##serves_per_day_fruit = {}
 
-        st.image("image/fruitserve.png", caption="Serving Size Fruit")
+        st.image("fruitserve.png", caption="Serving Size Fruit")
         serves_per_day_fruit = st.select_slider(f"How many serves of fruit per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         ##serves_per_day_fruit = float(serves_per_day_fruit[:1]) * 150
 
         st.session_state["serves_per_day_fruit"] = serves_per_day_fruit
 
-        st.image("image/starchyvegserve.png", caption="Serving Size Starchy Vegetables")
+        st.image("starchyvegserve.png", caption="Serving Size Starchy Vegetables")
         serves_per_day_starchyveg = st.select_slider(f"How many serves of starchy vegetables per day?",
                                   options=["0-1", "2-3", "4 or more"],
                                   help="hep")
@@ -146,50 +146,50 @@ def display_page(page_num):
 
 
 
-        st.image("image/dairyserve.png", caption="Serving Size Dairy")
+        st.image("dairyserve.png", caption="Serving Size Dairy")
         serves_per_day_dairy = st.select_slider(f"How many serves of dairy per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_dairy"] = serves_per_day_dairy
 
-        st.image("image/refgrainserve.png", caption="Serving Size Refined Grains")
+        st.image("refgrainserve.png", caption="Serving Size Refined Grains")
         serves_per_day_refgrain = st.select_slider(f"How many serves of refined grains per day?",
                                   options=["0-1", "2-3", "4-5", "6 or more"],
                                   help="hep")
         st.session_state["serves_per_day_refgrain"] = serves_per_day_refgrain
 
 
-        st.image("image/whgrainserve.png", caption="Serving Size Whole Grains")
+        st.image("whgrainserve.png", caption="Serving Size Whole Grains")
         serves_per_day_whgrain = st.select_slider(f"How many serves of whole grains per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_whgrain"] = serves_per_day_whgrain
 
 
-        st.image("image/prmeatserve.png", caption="Serving Size Processed Meats")
+        st.image("prmeatserve.png", caption="Serving Size Processed Meats")
         serves_per_day_prmeat = st.select_slider(f"How many serves of processed meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_prmeat"] = serves_per_day_prmeat
 
 
-        st.image("image/eggserve.png", caption="Serving Size Eggs")
+        st.image("eggserve.png", caption="Serving Size Eggs")
         serves_per_day_egg = st.select_slider(f"How many serves of eggs per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_egg"] = serves_per_day_egg
 
 
-        st.image("image/unprmeatserve.png", caption="Serving Size Unprocessed Meat")
+        st.image("unprmeatserve.png", caption="Serving Size Unprocessed Meat")
         serves_per_day_unprmeat = st.select_slider(f"How many serves of Unprocessed Meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_unprmeat"] = serves_per_day_unprmeat
 
 
-        st.image("image/swdrinkserve.png", caption="Serving Size Sweetened Beverage")
+        st.image("swdrinkserve.png", caption="Serving Size Sweetened Beverage")
         serves_per_day_swbeverage = st.select_slider(f"How many serves of Sweetened Beverage per day?",
                                   options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_swbeverage"] = serves_per_day_swbeverage
 
 
-        st.image("image/fjuiceserve.png", caption="Serving Size Fruit Juice")
+        st.image("fjuiceserve.png", caption="Serving Size Fruit Juice")
         serves_per_day_fjuice = st.select_slider(f"How many serves of Fruit Juice per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
         st.session_state["serves_per_day_fjuice"] = serves_per_day_fjuice
@@ -214,7 +214,7 @@ def display_page(page_num):
         import seaborn as sns
 
 
-        st.image('image/Header.png')
+        st.image('Header.png')
 
         data = pd.read_csv('GlobalDietaryDatabase_V2.csv')
         data = pd.concat([data] * 20)
@@ -415,3 +415,4 @@ if "page" not in st.session_state:
 
 # Display content based on the current page
 display_page(st.session_state["page"])
+
