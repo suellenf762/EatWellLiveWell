@@ -384,7 +384,7 @@ def display_page(page_num):
 
 
         ##st.button("Restart1")
-        submit_page4 = st.button("Submit", on_click=click_button)
+        submit_page4 = st.button("Restart the App", on_click=click_button)
 
         if submit_page4:
             ##st.session_state["name"] = name
