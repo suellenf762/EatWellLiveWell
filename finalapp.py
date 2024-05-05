@@ -115,67 +115,66 @@ def display_page(page_num):
         ]
         serves_per_day_fruit = {}
 
-        st.image("fruitserve.png",caption="Serving Size Fruit")
+       st.image("fruitserve.png", caption="Serving Size Fruit")
         serves = st.select_slider(f"How many serves of fruit per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_fruit= float(serves[:1])
+        serves_per_day_fruit = float(serves[:1])*150
         serves_per_day_fruit
 
-        st.image("starchyvegserve.png",caption="Serving Size Starchy Vegetables")
-        serves = st.select_slider(f"How many serves of starchy vegetables per day?", options=["0-1", "2-3", "4 or more"],
+        st.image("starchyvegserve.png", caption="Serving Size Starchy Vegetables")
+        serves = st.select_slider(f"How many serves of starchy vegetables per day?",
+                                  options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_starchyveg= float(serves[:1])
+        serves_per_day_starchyveg = float(serves[:1])*180
         serves_per_day_starchyveg
 
-
-
-        st.image("dairyserve.png",caption="Serving Size Dairy")
+        st.image("dairyserve.png", caption="Serving Size Dairy")
         serves = st.select_slider(f"How many serves of dairy per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_dairy= float(serves[:1])
+        serves_per_day_dairy = float(serves[:1])*250
         serves_per_day_dairy
 
-
-        st.image("refgrainserve.png",caption="Serving Size Refined Grains")
+        st.image("refgrainserve.png", caption="Serving Size Refined Grains")
         serves = st.select_slider(f"How many serves of refined grains per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_refgrain= float(serves[:1])
+        serves_per_day_refgrain = float(serves[:1])*50
         serves_per_day_refgrain
 
-        st.image("whgrainserve.png",caption="Serving Size Whole Grains")
+        st.image("whgrainserve.png", caption="Serving Size Whole Grains")
         serves = st.select_slider(f"How many serves of whole grains per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_whgrain= float(serves[:1])
+        serves_per_day_whgrain = float(serves[:1])*50
         serves_per_day_whgrain
 
-        st.image("prmeatserve.png",caption="Serving Size Processed Meats")
+        st.image("prmeatserve.png", caption="Serving Size Processed Meats")
         serves = st.select_slider(f"How many serves of processed meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_prmeat= float(serves[:1])
+        serves_per_day_prmeat = float(serves[:1])*50
         serves_per_day_prmeat
 
-        st.image("eggserve.png",caption="Serving Size Eggs")
+        st.image("eggserve.png", caption="Serving Size Eggs")
         serves = st.select_slider(f"How many serves of eggs per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_egg= float(serves[:1])
+        serves_per_day_egg = float(serves[:1])*55
         serves_per_day_egg
 
-        st.image("unprmeatserve.png",caption="Serving Size Unprocessed Meat")    
+        st.image("unprmeatserve.png", caption="Serving Size Unprocessed Meat")
         serves = st.select_slider(f"How many serves of Unprocessed Meat per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_unprmeat= float(serves[:1])
+        serves_per_day_unprmeat = float(serves[:1])*100
         serves_per_day_unprmeat
 
-        st.image("swdrinkserve.png",caption="Serving Size Sweetened Beverage")    
-        serves = st.select_slider(f"How many serves of Sweetened Beverage per day?", options=["0-1", "2-3", "4 or more"],
+        st.image("swdrinkserve.png", caption="Serving Size Sweetened Beverage")
+        serves = st.select_slider(f"How many serves of Sweetened Beverage per day?",
+                                  options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_swbeverage= float(serves[:1])
+        serves_per_day_swbeverage = float(serves[:1])*248
         serves_per_day_swbeverage
 
-        st.image("fjuiceserve.png",caption="Serving Size Fruit Juice")    
+        st.image("fjuiceserve.png", caption="Serving Size Fruit Juice")
         serves = st.select_slider(f"How many serves of Fruit Juice per day?", options=["0-1", "2-3", "4 or more"],
                                   help="hep")
-        serves_per_day_fjuice= float(serves[:1])
+        serves_per_day_fjuice = float(serves[:1])*248
         serves_per_day_fjuice
 
 
