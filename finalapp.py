@@ -107,6 +107,7 @@ def display_page(page_num):
                        "https://www.healthdirect.gov.au/australian-health-services")
         if st.button("NEXT"):
             st.session_state["page"] = 3
+            st.experimental_rerun()
 
     elif page_num == 3:
         ##set_background('background.png')
@@ -207,6 +208,7 @@ def display_page(page_num):
             # st.session_state["results"] = risk_prediction
             # st.success("Selections submitted successfully")
             st.session_state["page"] = 4  # Move to results page
+            st.experimental_rerun()
 
     elif page_num == 4:
         import numpy as np
@@ -386,11 +388,12 @@ def display_page(page_num):
 
         ##st.button("Restart1")
         submit_page4 = st.button("Restart the App", on_click=click_button)
+        st.experimental_rerun()
 
         if submit_page4:
             ##st.session_state["name"] = name
             st.session_state["page"] = 1  # Move to page 2 after submission
-
+            st.experimental_rerun()
 # def calculate_risk_factor(serves_per_day):
 #     risk_factor = 0
 #     for food, serves in serves_per_day.items():
