@@ -434,7 +434,7 @@ def display_page(page_num):
             st.write(":arrow_up: You are eating MORE vegetables than the recommended 6 serves per day")
 
 
-                rec_serve_dairy = 3
+        rec_serve_dairy = 3
         if dairy< rec_serve_dairy :
             st.write(":arrow_down: You are eating LESS dairy than the recommended 6 serves per day")
         elif dairy == rec_serve_dairy :
