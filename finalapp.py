@@ -367,7 +367,7 @@ def display_page(page_num):
         fjuice = float(serves_per_day_fjuice) * 248
         BMI = float(BMI)
 
-        test = np.asarray([fruit, starchyveg, refgrain, whgrain, prmeat, unprmeat, egg, dairy, swbeverage, fjuice, BMI])
+        test = np.asarray([fruit,nonstarchyveg, starchyveg, refgrain, whgrain, prmeat, unprmeat, egg, dairy, swbeverage, fjuice, BMI])
         test = test.reshape(1, -1)
 
         # ##with open(model_pkl_file, 'rb') as file:
@@ -376,7 +376,7 @@ def display_page(page_num):
         # print(model)
 
         ## check unprocessed red meats
-        inputmodel = pd.DataFrame(test, columns=['Fruits', 'starchy vegetables', 'Refined grains', 'Whole grains',
+        inputmodel = pd.DataFrame(test, columns=['Fruits','Non-starchy vegetables', 'starchy vegetables', 'Refined grains', 'Whole grains',
                                                  'Total processed meats', 'Unprocessed red meats', 'Eggs',
                                                  'Total Dairy',
                                                  'Sugar-sweetened beverages', 'Fruit juices', 'BMI'])
