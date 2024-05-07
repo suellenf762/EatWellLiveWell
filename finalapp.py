@@ -417,9 +417,9 @@ def display_page(page_num):
         st.write(f'Category: {bmi_category}')
 
         rec_serve_fruit = 2
-        if fruit < rec_serve_fruit :
-            st.write(":arrow_down: You are eating less fruit than recommended 2 serves per day")
-        elif fruit == rec_serve_fruit :
+        if fruit + fjuice < rec_serve_fruit :
+            st.write(":arrow_down: You are eating less fruit (including juice) than recommended 2 serves per day")
+        elif fruit + fjuice == rec_serve_fruit :
             st.write(":white_check_mark: You are eating the recommended serving size of 2 serves")
         else:
             st.write(":arrow_up: You are eating more fruit than recommended 2 serves per day")
