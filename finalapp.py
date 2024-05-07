@@ -418,11 +418,20 @@ def display_page(page_num):
 
         rec_serve_fruit = 2
         if fruit + fjuice < rec_serve_fruit :
-            st.write(":arrow_down: You are eating less fruit (including juice) than recommended 2 serves per day")
+            st.write(":arrow_down: You are eating less fruit (including juice) than the recommended 2 serves per day")
         elif fruit + fjuice == rec_serve_fruit :
-            st.write(":white_check_mark: You are eating the recommended serving size of 2 serves")
+            st.write(":white_check_mark: You are eating the recommended serving size of 2 serves of fruit per day")
         else:
-            st.write(":arrow_up: You are eating more fruit than recommended 2 serves per day")
+            st.write(":arrow_up: You are eating more fruit than the recommended 2 serves per day")
+
+
+        rec_serve_vegies = 6
+        if starchyveg + nonstarchyveg < rec_serve_vegies :
+            st.write(":arrow_down: You are eating less vegetables than the recommended 6 serves per day")
+        elif starchyveg + nonstarchyveg == rec_serve_vegies :
+            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of vegetables per day")
+        else:
+            st.write(":arrow_up: You are eating more vegetables than the recommended 6 serves per day")
 
         # # Plot BMI graph
         # height_values = np.linspace(100, 250, 100)
