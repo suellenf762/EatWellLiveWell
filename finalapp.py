@@ -152,6 +152,13 @@ def display_page(page_num):
         st.session_state["serves_per_day_fruit"] = serves_per_day_fruit
         st.write("")
 
+        st.write("How many serves of Non Starchy Vegetables per day?")
+        ##st.image("nonstarchyvegserve.png")
+        serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        st.session_state["serves_per_day_nonstarchyveg"] = serves_per_day_nonstarchyveg
+        st.write("")
+        
+
 
         st.write("How many serves of Starchy Vegetables per day?")
         st.image("starchyvegserve.png")
@@ -329,6 +336,7 @@ def display_page(page_num):
 
         serves_per_day_fruit = st.session_state["serves_per_day_fruit"]
         serves_per_day_starchyveg = st.session_state["serves_per_day_starchyveg"]
+        serves_per_day_nonstarchyveg = st.session_state["serves_per_day_nonstarchyveg"]
         serves_per_day_dairy = st.session_state["serves_per_day_dairy"]
         serves_per_day_refgrain = st.session_state["serves_per_day_refgrain"]
         serves_per_day_whgrain = st.session_state["serves_per_day_whgrain"]
@@ -348,6 +356,7 @@ def display_page(page_num):
 
         fruit = float(serves_per_day_fruit) * 150
         starchyveg = float(serves_per_day_starchyveg) * 180
+        nonstarchyveg = float(serves_per_day_nonstarchyveg) * 100
         dairy = float(serves_per_day_dairy) * 250
         refgrain = float(serves_per_day_refgrain) * 50
         whgrain = float(serves_per_day_whgrain) * 50
