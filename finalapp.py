@@ -341,8 +341,8 @@ def display_page(page_num):
         Weight = st.session_state["Weight"]
 
         ##BMI = weight(kg) ÷ height 2(meters)
+        BMI = Weight / ((Height / 100) ** 2)
 
-        BMI = Weight/2*(Height/100)
 
         name = st.session_state["name"]
 
