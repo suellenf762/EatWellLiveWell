@@ -446,11 +446,11 @@ def display_page(page_num):
 
 
         if total_grain > 0  and whgrain/total_grain <0.5 :
-            st.write(":arrow_down: You are eating LESS whole grains than refined grains. It is recommened that your increase your whole grains.")
+            st.write(":arrow_down: You are eating LESS whole grains than refined grains. It is recommeneded that you increase your whole grains.")
         elif total_grain > 0  and whgrain/total_grain <0.75 :
-            st.write(":white_check_mark: You are eating between 50-75% whole grains of your total grains which above the recommended average.")
+            st.write(":arrow_down: You are eating between 50-75% whole grains and 25-50% refined grains. Try eating less refined grains.")
         else:
-            st.write(":white_check_mark: You are eating mostly whole grains of your total grains which exceeds the recommended average.")
+            st.write(":white_check_mark: You are eating mainly whole grains and less refined grains which exceeds the recommended average.")
 
 
         
