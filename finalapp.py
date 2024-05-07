@@ -79,9 +79,9 @@ def display_page(page_num):
         st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
 
-        Height = st.number_input("Please enter your height in cm", value=None, placeholder="Type a number...")
+        Height = st.number_input("Please enter your height in cm", value=None, placeholder="Type a number eg 155...")
         st.session_state["Height"] = Height
-        Weight = st.number_input("Please enter your weight in km", value=None, placeholder="Type a number...")
+        Weight = st.number_input("Please enter your weight in kg", value=None, placeholder="Type a number eg 65...")
         st.session_state["Weight"] = Weight
         # BMI = st.slider(f"Enter BMI?",
         #                 help="hep")
