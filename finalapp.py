@@ -418,29 +418,42 @@ def display_page(page_num):
 
         rec_serve_fruit = 2
         if fruit + fjuice < rec_serve_fruit :
-            st.write(":arrow_down: You are eating LESS fruit (including juice) than the recommended 2 serves per day")
+            st.write(":arrow_down: You are eating LESS fruit (including juice) than the recommended 2 serves per day.")
         elif fruit + fjuice == rec_serve_fruit :
-            st.write(":white_check_mark: You are eating the recommended serving size of 2 serves of fruit per day")
+            st.write(":white_check_mark: You are eating the recommended serving size of 2 serves of fruit per day.")
         else:
-            st.write(":arrow_up: You are eating MORE fruit than the recommended 2 serves per day")
+            st.write(":arrow_up: You are eating MORE fruit than the recommended 2 serves per day.")
 
 
         rec_serve_vegies = 6
         if starchyveg + nonstarchyveg < rec_serve_vegies :
-            st.write(":arrow_down: You are eating LESS vegetables than the recommended 6 serves per day")
+            st.write(":arrow_down: You are eating LESS vegetables than the recommended 6 serves per day.")
         elif starchyveg + nonstarchyveg == rec_serve_vegies :
-            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of vegetables per day")
+            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of vegetables per day.")
         else:
-            st.write(":arrow_up: You are eating MORE vegetables than the recommended 6 serves per day")
+            st.write(":arrow_up: You are eating MORE vegetables than the recommended 6 serves per day.")
 
 
-        rec_serve_dairy = 3
-        if dairy< rec_serve_dairy :
-            st.write(":arrow_down: You are eating LESS dairy than the recommended 6 serves per day")
-        elif dairy == rec_serve_dairy :
-            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of dairy per day")
+        rec_serve_grain = 6
+        total_grain = refgrain + whgrain
+       
+        if total_grain< rec_serve_grain :
+            st.write(":arrow_down: You are eating LESS grains than the recommended 6 serves per day.")
+        elif total_grain == rec_serve_grain :
+            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of grains per day.")
         else:
-            st.write(":arrow_up: You are eating MORE dairy than the recommended 6 serves per day")
+            st.write(":arrow_up: You are eating MORE grains than the recommended 6 serves per day.")
+
+
+        if total_grain > 0  and whgrain/total_grain <0.5 :
+        st.write(":arrow_down: You are eating LESS whole grains than refined grains. It is recommened that your increase your whole grains.")
+        elif total_grain > 0  and whgrain/total_grain between 0.5 and 0.75 :
+            st.write(":white_check_mark: You are eating between 50-75% whole grains of your total grains which above the recommended average.")
+        else:
+            st.write(":white_check_mark: You are eating mostly whole grains of your total grains which exceeds the recommended average.")
+
+
+        
 
         st.write("")
         st.write("")
