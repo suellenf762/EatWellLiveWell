@@ -442,6 +442,10 @@ def display_page(page_num):
         else:
             st.write(":arrow_up: You are eating MORE dairy than the recommended 6 serves per day")
 
+        st.write("")
+        st.write("")
+        
+
         # # Plot BMI graph
         # height_values = np.linspace(100, 250, 100)
         # weight_values = np.linspace(0, 200, 100)
