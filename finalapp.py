@@ -409,7 +409,8 @@ def display_page(page_num):
             st.write(f"Hi {name} you are NOT at risk for having diabetes.")
 
         st.write('')
-        st.write('Eat Well Live Well Results')
+        st.write('Below are some findings from the information you entered into the Eat Well Live Well Application')
+        st.divider()
         st.write('Your BMI and category:')
 
         bmi_category = get_bmi_category(BMI)
