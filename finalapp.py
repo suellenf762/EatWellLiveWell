@@ -157,7 +157,7 @@ def display_page(page_num):
         serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_nonstarchyveg"] = serves_per_day_nonstarchyveg
         st.write("")
-        
+
 
 
         st.write("How many serves of Starchy Vegetables per day?")
@@ -368,7 +368,9 @@ def display_page(page_num):
         BMI = float(BMI)
 
         test = np.asarray([fruit,nonstarchyveg, starchyveg, refgrain, whgrain, prmeat, unprmeat, egg, dairy, swbeverage, fjuice, BMI])
+
         test = test.reshape(1, -1)
+        test = scaler.fit_transform(test)
 
         # ##with open(model_pkl_file, 'rb') as file:
         # import pickle
@@ -376,10 +378,13 @@ def display_page(page_num):
         # print(model)
 
         ## check unprocessed red meats
+
+
         inputmodel = pd.DataFrame(test, columns=['Fruits','Non-starchy vegetables', 'starchy vegetables', 'Refined grains', 'Whole grains',
                                                  'Total processed meats', 'Unprocessed red meats', 'Eggs',
                                                  'Total Dairy',
                                                  'Sugar-sweetened beverages', 'Fruit juices', 'BMI'])
+
 
         y_predict = model.predict(inputmodel)
         ##st.write(f"{name}, what do you eat each day?")
@@ -403,62 +408,105 @@ def display_page(page_num):
                 f"Hi {name} based on the information you provided YOU ARE AT RISK for having diabetes. It is recommended that you seek medical advice")
             st.page_link("https://www.healthdirect.gov.au/australian-health-services",
                          label=":blue-background[To find a GP (General Practitioner) please click here]", icon="⚕️")
-            st.page_link("https://www.diabetesaustralia.com.au/risk-calculator/",
-                         label=":red-background[For more information about the risk factors of diabetes please click here]", icon="ℹ️")
+
+
         else:
-            st.write(f"Hi {name} you are NOT at risk for having diabetes.")
+            st.write(f"Hi {name} you may NOT be at risk for having diabetes.")
 
         st.write('')
-        st.write('Below are some findings from the information you entered into the Eat Well Live Well Application')
-        st.divider()
-        st.write('Your BMI and category:')
-
+        st.write('Based on the information you entered into this Application')
         bmi_category = get_bmi_category(BMI)
-        st.write(f'BMI: {BMI:.1f}')
-        st.write(f'Category: {bmi_category}')
+        st.write(f' Your BMI is {BMI:.1f}  and this puts you in the category of {bmi_category}.')
+
+
+        st.write("You are eating:")
 
         rec_serve_fruit = 2
-        if fruit + fjuice < rec_serve_fruit :
-            st.write(":arrow_down: You are eating LESS fruit (including juice) than the recommended 2 serves per day.")
-        elif fruit + fjuice == rec_serve_fruit :
-            st.write(":white_check_mark: You are eating the recommended serving size of 2 serves of fruit per day.")
+        if serves_per_day_fruit + serves_per_day_fjuice < rec_serve_fruit :
+            st.write(":arrow_down: LESS fruit (including juice) than the recommended 2 serves per day.")
+        elif serves_per_day_fruit + serves_per_day_fjuice == rec_serve_fruit :
+            st.write(":white_check_mark: The recommended serving size of 2 serves of fruit per day.")
         else:
-            st.write(":arrow_up: You are eating MORE fruit than the recommended 2 serves per day.")
+            st.write(":arrow_up: MORE fruit than the recommended 2 serves per day.")
 
 
         rec_serve_vegies = 6
-        if starchyveg + nonstarchyveg < rec_serve_vegies :
-            st.write(":arrow_down: You are eating LESS vegetables than the recommended 6 serves per day.")
-        elif starchyveg + nonstarchyveg == rec_serve_vegies :
-            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of vegetables per day.")
+        if serves_per_day_starchyveg + serves_per_day_nonstarchyveg < rec_serve_vegies :
+            st.write(":arrow_down: LESS vegetables than the recommended 6 serves per day.")
+        elif serves_per_day_starchyveg + serves_per_day_nonstarchyveg == rec_serve_vegies :
+            st.write(":white_check_mark: The recommended serving size of 6 serves of vegetables per day.")
         else:
-            st.write(":arrow_up: You are eating MORE vegetables than the recommended 6 serves per day.")
+            st.write(":arrow_up: MORE vegetables than the recommended 6 serves per day.")
 
 
         rec_serve_grain = 6
-        total_grain = refgrain + whgrain
-       
+        total_grain = serves_per_day_refgrain + serves_per_day_whgrain
+
         if total_grain< rec_serve_grain :
-            st.write(":arrow_down: You are eating LESS grains than the recommended 6 serves per day.")
+            st.write(":arrow_down: LESS grains than the recommended 6 serves per day.")
         elif total_grain == rec_serve_grain :
-            st.write(":white_check_mark: You are eating the recommended serving size of 6 serves of grains per day.")
+            st.write(":white_check_mark: The recommended serving size of 6 serves of grains per day.")
         else:
-            st.write(":arrow_up: You are eating MORE grains than the recommended 6 serves per day.")
+            st.write(":arrow_up: MORE grains than the recommended 6 serves per day.")
 
 
-        if total_grain > 0  and whgrain/total_grain <0.5 :
-            st.write(":arrow_down: You are eating LESS whole grains than refined grains. It is recommended that you increase your whole grains.")
-        elif total_grain > 0  and whgrain/total_grain <0.75 :
-            st.write(":arrow_down: You are eating between 50-75% whole grains and 25-50% refined grains. Try eating less refined grains.")
+        if total_grain > 0  and serves_per_day_whgrain/total_grain <0.5 :
+            st.markdown(''':arrow_down: LESS whole grains than refined grains.    
+            :arrow_right: It is recommended that you increase your whole grains.''')
+
+        elif total_grain > 0  and serves_per_day_whgrain/total_grain <0.75 :
+            st.write(":arrow_down: Between 50-75% whole grains and 25-50% refined grains. Try eating less refined grains.")
         else:
-            st.write(":white_check_mark: You are eating mainly whole grains and less refined grains which exceeds the recommended average.")
+            st.write(":white_check_mark: Mainly whole grains and less refined grains which exceeds the recommended average.")
+
+        rec_serve_leanmeat = 2.5
+        leanmeat = serves_per_day_unprmeat + serves_per_day_egg
+
+        if leanmeat< rec_serve_leanmeat :
+            st.write(":arrow_down: LESS unprocessed meat and eggs than the recommended 2.5 serves per day.")
+        elif leanmeat == rec_serve_leanmeat :
+            st.write(":white_check_mark: The recommended serving size of 2.5 serves of unprocessed meat and eggs per day.")
+        else:
+            st.write(":arrow_up: MORE unprocessed meat and eggs than the recommended 2.5 serves per day.")
+
+        rec_serve_dairy = 3
 
 
-        
+        if serves_per_day_dairy< rec_serve_dairy :
+            st.write(":arrow_down: LESS dairy than the recommended 3 serves per day.")
+        elif serves_per_day_dairy == rec_serve_dairy :
+            st.write(":white_check_mark: The recommended serving size of 3 serves of dairy per day.")
+        else:
+            st.write(":arrow_up: MORE dairy than the recommended 3 serves per day.")
+
+
+
+        rec_serve_discret = 2
+        Total_discret = serves_per_day_prmeat + serves_per_day_swbeverage
+        if Total_discret < rec_serve_discret :
+            st.write(":arrow_down: LESS discretionary foods than the recommended 2 serves per day.")
+        elif serves_per_day_dairy == rec_serve_dairy :
+            st.write(":white_check_mark: The recommended serving size of 2 serves of discretionary foods per day.")
+        else:
+            st.markdown(''':arrow_up: MORE discretionary foods than the recommended 3 serves per day.  
+            :arrow_right:  It is recommended that your replace these servings with a more healthy option.''')
+        st.markdown('''  :yum: Discretionary Foods are foods you enjoy but are unnecessary.    
+                   :bubble_tea: For example sweetened beverages and processed meats''' )
+
+
+        st.markdown(f"Thanks {name} for using this application and I hope you found it useful.")
+        st.page_link("https://www.diabetesaustralia.com.au/risk-calculator/",
+                     label=":red-background[For more information about the risk factors of diabetes please click here]",
+                     icon="ℹ️")
+
+        st.markdown('<a href="mailto:Suellen.L.Fletcher@student.uts.edu.au">Feedback Welcome via Email </a>', unsafe_allow_html=True)
+
+
+
 
         st.write("")
         st.write("")
-        
+
 
         # # Plot BMI graph
         # height_values = np.linspace(100, 250, 100)
