@@ -83,9 +83,6 @@ def display_page(page_num):
         st.session_state["Height"] = Height
         Weight = st.number_input("Please enter your weight in kg", value=None, placeholder="Type a number eg 65...")
         st.session_state["Weight"] = Weight
-        # BMI = st.slider(f"Enter BMI?",
-        #                 help="hep")
-        # st.session_state["BMI"] = BMI
 
         submit_page1 = st.button("Submit", on_click=click_button)
 
@@ -96,9 +93,7 @@ def display_page(page_num):
 
     elif page_num == 2:
         ##set_background('background.png')
-
         st.image('Header.png')
-
         ##st.title("Eat Well Live Well")
         st.write(f"Hi {st.session_state['name']}!")
         st.write("The early signs and symptoms of Type 2 Diabetes can include:")
@@ -113,11 +108,9 @@ def display_page(page_num):
         st.markdown("\n".join([f"- {sign}" for sign in signs]))
 
         st.write(
-            "If you have recently started experiencing these symptoms, it is recommended that you seek medical advice as soon as possible.")
-        st.page_link("https://www.healthdirect.gov.au/australian-health-services", label=":blue-background[To find a GP (General Practitioner) please click here]", icon ="⚕️")
-
-        ##st.link_button(":color-background[To find a GP (General Practitioner) please click here]",
-                      ## "https://www.healthdirect.gov.au/australian-health-services")
+            ":large_red_square: If you have recently started experiencing these symptoms, it is recommended that you seek medical advice as soon as possible.")
+        st.link_button("To find a GP (General Practitioner) please click here",
+                       "https://www.healthdirect.gov.au/australian-health-services")
         if st.button("NEXT"):
             st.session_state["page"] = 3
             st.experimental_rerun()
@@ -128,8 +121,8 @@ def display_page(page_num):
         ##st.title("Eat Well Live Well")
         name = st.session_state["name"]
         st.write(f"{name}, what do you eat each day?")
-        ##st.link_button("For more information on serving sizes please click here",
-        ##               "https://www.eatforhealth.gov.au/food-essentials/five-food-groups/grain-cereal-foods-mostly-wholegrain-and-or-high-cereal-fibre")
+        st.link_button("For more information on serving sizes please click here",
+                       "https://www.eatforhealth.gov.au/food-essentials/five-food-groups/grain-cereal-foods-mostly-wholegrain-and-or-high-cereal-fibre")
 
         # Define the list of food options
         food_options = [
@@ -139,22 +132,18 @@ def display_page(page_num):
         ]
 
 
-        ##serves_per_day_fruit = {}
 
 
-        # serves_per_day_fruit = st.select_slider(f"How many serves of fruit per day?",
-        #                                         options=["0-1", "2-3", "4 or more"],
-        #
-        #                                         help="hep")
+
         st.write("How many serves of fruit per day?")
         st.image("fruitserve.png")
-        serves_per_day_fruit = st.slider(f"How many serves of fruit per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_fruit = st.slider(f"How many serves of fruit per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_fruit"] = serves_per_day_fruit
         st.write("")
 
         st.write("How many serves of Non Starchy Vegetables per day?")
         ##st.image("nonstarchyvegserve.png")
-        serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_nonstarchyveg"] = serves_per_day_nonstarchyveg
         st.write("")
 
@@ -162,60 +151,57 @@ def display_page(page_num):
 
         st.write("How many serves of Starchy Vegetables per day?")
         st.image("starchyvegserve.png")
-        serves_per_day_starchyveg = st.slider(f"How many serves of Starchy Vegetables per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_starchyveg = st.slider(f"How many serves of Starchy Vegetables per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_starchyveg"] = serves_per_day_starchyveg
         st.write("")
 
         st.write("How many serves of Dairy per day?")
         st.image("dairyserve.png")
-        serves_per_day_dairy = st.slider(f"How many serves of Dairy per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_dairy = st.slider(f"How many serves of Dairy per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_dairy"] = serves_per_day_dairy
         st.write("")
 
         st.write("How many serves of Refined Grains per day?")
         st.image("refgrainserve.png")
-        serves_per_day_refgrain = st.slider(f"How many serves of Refined Grains per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_refgrain = st.slider(f"How many serves of Refined Grains per day?", min_value=0, max_value=6,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_refgrain"] = serves_per_day_refgrain
         st.write("")
 
         st.write("How many serves of Whole Grains per day?")
         st.image("whgrainserve.png")
-        serves_per_day_whgrain = st.slider(f"How many serves of Whole Grains per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_whgrain = st.slider(f"How many serves of Whole Grains per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_whgrain"] = serves_per_day_whgrain
         st.write("")
 
         st.write("How many serves of Processed Meat per day?")
         st.image("prmeatserve.png")
-        serves_per_day_prmeat = st.slider(f"How many serves of Processed Meat per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_prmeat = st.slider(f"How many serves of Processed Meat per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_prmeat"] = serves_per_day_prmeat
         st.write("")
 
         st.write("How many serves of Eggs per day?")
         st.image("eggserve.png")
-        serves_per_day_egg = st.slider(f"How many serves of Eggs per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_egg = st.slider(f"How many serves of Eggs per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_egg"] = serves_per_day_egg
         st.write("")
 
         st.write("How many serves of Unprocessed Meat per day?")
         st.image("unprmeatserve.png")
-        serves_per_day_unprmeat = st.slider(f"How many serves of Unprocessed Meat per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_unprmeat = st.slider(f"How many serves of Unprocessed Meat per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_unprmeat"] = serves_per_day_unprmeat
         st.write("")
 
         st.write("How many serves of Sweetened Beverages per day?")
         st.image("swdrinkserve.png")
-        serves_per_day_swbeverage = st.slider(f"How many serves of Sweetened Beverages per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_swbeverage = st.slider(f"How many serves of Sweetened Beverages per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_swbeverage"] = serves_per_day_swbeverage
         st.write("")
 
         st.write("How many serves of Fruit Juice per day?")
         st.image("fjuiceserve.png")
-        serves_per_day_fjuice = st.slider(f"How many serves of fruit juice per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
+        serves_per_day_fjuice = st.slider(f"How many serves of fruit juice per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_fjuice"] = serves_per_day_fjuice
         st.write("")
-
-
-
         # Add a button to submit selection
         if st.button("Submit"):
             # Calculate risk factor based on servings per day
@@ -234,6 +220,7 @@ def display_page(page_num):
         import pandas as pd
         import matplotlib.pyplot as plt
         import seaborn as sns
+
 
         st.image('Header.png')
 
@@ -273,6 +260,7 @@ def display_page(page_num):
 
         # view dimensions of dataset
         df = df_cleaned
+
 
         from sklearn.model_selection import train_test_split
 
@@ -332,9 +320,9 @@ def display_page(page_num):
         # with open(model_pkl_file, 'rb') as file:
         #     model = pickle.load(file)
 
-        model = svm_classifier
+        model =svm_classifier
 
-        serves_per_day_fruit = st.session_state["serves_per_day_fruit"]
+        serves_per_day_fruit= st.session_state["serves_per_day_fruit"]
         serves_per_day_starchyveg = st.session_state["serves_per_day_starchyveg"]
         serves_per_day_nonstarchyveg = st.session_state["serves_per_day_nonstarchyveg"]
         serves_per_day_dairy = st.session_state["serves_per_day_dairy"]
@@ -347,16 +335,13 @@ def display_page(page_num):
         serves_per_day_fjuice = st.session_state["serves_per_day_fjuice"]
         Height = st.session_state["Height"]
         Weight = st.session_state["Weight"]
-
-        ##BMI = weight(kg) ÷ height 2(meters)
-        BMI = Weight / ((Height / 100) ** 2)
-
+        BMI = 51
 
         name = st.session_state["name"]
 
         fruit = float(serves_per_day_fruit) * 150
         starchyveg = float(serves_per_day_starchyveg) * 180
-        nonstarchyveg = float(serves_per_day_nonstarchyveg) * 100
+        ##nonstarchyveg = float(serves_per_day_nonstarchyveg) * 100
         dairy = float(serves_per_day_dairy) * 250
         refgrain = float(serves_per_day_refgrain) * 50
         whgrain = float(serves_per_day_whgrain) * 50
@@ -365,12 +350,10 @@ def display_page(page_num):
         egg = float(serves_per_day_egg) * 55
         swbeverage = float(serves_per_day_swbeverage) * 248
         fjuice = float(serves_per_day_fjuice) * 248
+        BMI = float(Weight) / ((float(Height) / 100) ** 2)
         BMI = float(BMI)
-
-        test = np.asarray([fruit,nonstarchyveg, starchyveg, refgrain, whgrain, prmeat, unprmeat, egg, dairy, swbeverage, fjuice, BMI])
-
+        test = np.asarray([fruit,starchyveg,refgrain,whgrain,prmeat,unprmeat,egg,dairy,swbeverage,fjuice,BMI])
         test = test.reshape(1, -1)
-        test = scaler.fit_transform(test)
 
         # ##with open(model_pkl_file, 'rb') as file:
         # import pickle
@@ -378,19 +361,28 @@ def display_page(page_num):
         # print(model)
 
         ## check unprocessed red meats
+        inputmodel = pd.DataFrame(test, columns = ['Fruits', 'starchy vegetables', 'Refined grains', 'Whole grains',
+        'Total processed meats', 'Unprocessed red meats', 'Eggs', 'Total Dairy',
+        'Sugar-sweetened beverages', 'Fruit juices', 'BMI'])
 
-
-        inputmodel = pd.DataFrame(test, columns=['Fruits','Non-starchy vegetables', 'starchy vegetables', 'Refined grains', 'Whole grains',
-                                                 'Total processed meats', 'Unprocessed red meats', 'Eggs',
-                                                 'Total Dairy',
-                                                 'Sugar-sweetened beverages', 'Fruit juices', 'BMI'])
-
+        inputmodel.to_csv('inputmodel1.csv')
 
         y_predict = model.predict(inputmodel)
         ##st.write(f"{name}, what do you eat each day?")
 
+
         ##st.write(y_predict)
 
+        if (y_predict ==1 ):
+            st.write(
+                f"Hi {name} based on the information you provided YOU ARE AT RISK for having diabetes. It is recommended that you seek medical advice")
+            st.page_link("https://www.healthdirect.gov.au/australian-health-services",
+                         label=":blue-background[To find a GP (General Practitioner) please click here]", icon="⚕️")
+        else:
+            st.write(f"Hi {name} you are NOT at risk for having diabetes.")
+
+        ##st.write(y_predict)
+        st.write('Based on the information you entered into this Application')
         def get_bmi_category(bmi):
             if bmi < 18.5:
                 return "Underweight"
@@ -400,131 +392,95 @@ def display_page(page_num):
                 return "Overweight"
             else:
                 return "Obese"
-
-
-
-        if (y_predict == 1):
-            st.write(
-                f"Hi {name} based on the information you provided YOU ARE AT RISK for having diabetes. It is recommended that you seek medical advice")
-            st.page_link("https://www.healthdirect.gov.au/australian-health-services",
-                         label=":blue-background[To find a GP (General Practitioner) please click here]", icon="⚕️")
-
-
-        else:
-            st.write(f"Hi {name} you may NOT be at risk for having diabetes.")
-
-        st.write('')
-        st.write('Based on the information you entered into this Application')
         bmi_category = get_bmi_category(BMI)
         st.write(f' Your BMI is {BMI:.1f}  and this puts you in the category of {bmi_category}.')
-
 
         st.write("You are eating:")
 
         rec_serve_fruit = 2
-        if serves_per_day_fruit + serves_per_day_fjuice < rec_serve_fruit :
+        if serves_per_day_fruit + serves_per_day_fjuice < rec_serve_fruit:
             st.write(":arrow_down: LESS fruit (including juice) than the recommended 2 serves per day.")
-        elif serves_per_day_fruit + serves_per_day_fjuice == rec_serve_fruit :
+        elif serves_per_day_fruit + serves_per_day_fjuice == rec_serve_fruit:
             st.write(":white_check_mark: The recommended serving size of 2 serves of fruit per day.")
         else:
             st.write(":arrow_up: MORE fruit than the recommended 2 serves per day.")
 
-
         rec_serve_vegies = 6
-        if serves_per_day_starchyveg + serves_per_day_nonstarchyveg < rec_serve_vegies :
+        if serves_per_day_starchyveg + serves_per_day_nonstarchyveg < rec_serve_vegies:
             st.write(":arrow_down: LESS vegetables than the recommended 6 serves per day.")
-        elif serves_per_day_starchyveg + serves_per_day_nonstarchyveg == rec_serve_vegies :
+        elif serves_per_day_starchyveg + serves_per_day_nonstarchyveg == rec_serve_vegies:
             st.write(":white_check_mark: The recommended serving size of 6 serves of vegetables per day.")
         else:
             st.write(":arrow_up: MORE vegetables than the recommended 6 serves per day.")
 
-
         rec_serve_grain = 6
         total_grain = serves_per_day_refgrain + serves_per_day_whgrain
 
-        if total_grain< rec_serve_grain :
-            st.write(":arrow_down: LESS grains than the recommended 6 serves per day.")
-        elif total_grain == rec_serve_grain :
-            st.write(":white_check_mark: The recommended serving size of 6 serves of grains per day.")
+        if total_grain < rec_serve_grain:
+            st.write(":arrow_down: LESS refined grains than the recommended 6 serves per day.")
+        elif total_grain == rec_serve_grain:
+            st.write(":white_check_mark: The recommended serving size of 6 serves of refined grains per day.")
         else:
-            st.write(":arrow_up: MORE grains than the recommended 6 serves per day.")
+            st.write(":arrow_up: MORE refined grains than the recommended 6 serves per day.")
 
 
-        if total_grain > 0  and serves_per_day_whgrain/total_grain <0.5 :
-            st.markdown(''':arrow_down: LESS whole grains than refined grains.    
-            :arrow_right: It is recommended that you increase your whole grains.''')
+        if total_grain > 0 and serves_per_day_whgrain / total_grain < 0.5:
+            st.markdown(''':arrow_down: LESS whole grains than refined grains.  
+                    :arrow_right: It is recommended that you increase your whole grains.''')
 
-        elif total_grain > 0  and serves_per_day_whgrain/total_grain <0.75 :
-            st.write(":arrow_down: Between 50-75% whole grains and 25-50% refined grains. Try eating less refined grains.")
+        elif total_grain > 0 and serves_per_day_whgrain / total_grain < 0.75:
+            st.write(
+                ":arrow_down: Between 50-75% whole grains and 25-50% refined grains. Try eating less refined grains.")
         else:
-            st.write(":white_check_mark: Mainly whole grains and less refined grains which exceeds the recommended average.")
+            st.write(
+                ":white_check_mark: Mainly whole grains and less refined grains which exceeds the recommended average.")
 
         rec_serve_leanmeat = 2.5
         leanmeat = serves_per_day_unprmeat + serves_per_day_egg
 
-        if leanmeat< rec_serve_leanmeat :
+        if leanmeat < rec_serve_leanmeat:
             st.write(":arrow_down: LESS unprocessed meat and eggs than the recommended 2.5 serves per day.")
-        elif leanmeat == rec_serve_leanmeat :
-            st.write(":white_check_mark: The recommended serving size of 2.5 serves of unprocessed meat and eggs per day.")
+        elif leanmeat == rec_serve_leanmeat:
+            st.write(
+                ":white_check_mark: The recommended serving size of 2.5 serves of unprocessed meat and eggs per day.")
         else:
             st.write(":arrow_up: MORE unprocessed meat and eggs than the recommended 2.5 serves per day.")
 
         rec_serve_dairy = 3
 
-
-        if serves_per_day_dairy< rec_serve_dairy :
+        if serves_per_day_dairy < rec_serve_dairy:
             st.write(":arrow_down: LESS dairy than the recommended 3 serves per day.")
-        elif serves_per_day_dairy == rec_serve_dairy :
+        elif serves_per_day_dairy == rec_serve_dairy:
             st.write(":white_check_mark: The recommended serving size of 3 serves of dairy per day.")
         else:
             st.write(":arrow_up: MORE dairy than the recommended 3 serves per day.")
 
-
-
         rec_serve_discret = 2
         Total_discret = serves_per_day_prmeat + serves_per_day_swbeverage
-        if Total_discret < rec_serve_discret :
+        if Total_discret < rec_serve_discret:
             st.write(":arrow_down: LESS discretionary foods than the recommended 2 serves per day.")
-        elif serves_per_day_dairy == rec_serve_dairy :
+        elif serves_per_day_dairy == rec_serve_dairy:
             st.write(":white_check_mark: The recommended serving size of 2 serves of discretionary foods per day.")
         else:
             st.markdown(''':arrow_up: MORE discretionary foods than the recommended 3 serves per day.  
-            :arrow_right:  It is recommended that your replace these servings with a more healthy option.''')
-        st.markdown('''  :yum: Discretionary Foods are foods you enjoy but are unnecessary.    
-                   :bubble_tea: For example sweetened beverages and processed meats''' )
-
+                    :arrow_right:  It is recommended that your replace these servings with a more healthy option.''')
+        st.markdown('''  :yum: Discretionary Foods are foods you enjoy but are unnecessary.  
+                           :bubble_tea: For example sweetened beverages and processed meats''')
 
         st.markdown(f"Thanks {name} for using this application and I hope you found it useful.")
         st.page_link("https://www.diabetesaustralia.com.au/risk-calculator/",
                      label=":red-background[For more information about the risk factors of diabetes please click here]",
                      icon="ℹ️")
 
-        st.markdown('<a href="mailto:Suellen.L.Fletcher@student.uts.edu.au">Feedback Welcome via Email </a>', unsafe_allow_html=True)
-
-
-
-
-        st.write("")
-        st.write("")
-
-
-        # # Plot BMI graph
-        # height_values = np.linspace(100, 250, 100)
-        # weight_values = np.linspace(0, 200, 100)
-        # Height, Weight = np.meshgrid(height_values, weight_values)
-        #
-        # plt.imshow(BMI, extent=[100, 250, 0, 200], aspect='auto', origin='lower', cmap='viridis')
-        # plt.scatter(Height, Weight, color='red')
-        # plt.xlabel('Height (cm)')
-        # plt.ylabel
-
-
+        st.markdown('<a href="mailto:Suellen.L.Fletcher@student.uts.edu.au">Feedback Welcome via Email </a>',
+                    unsafe_allow_html=True)
 
         # 'Fruits', 'starchy vegetables', 'Refined grains', 'Whole grains',
         # 'Total processed meats', 'Unprocessed red meats', 'Eggs', 'Total Dairy',
         # 'Sugar-sweetened beverages', 'Fruit juices', 'BMI'],
         ##dtype = 'object'
-        ##,serves_per_day_starchyveg,serves_per_day_refgrain,serves_per_day_whgrain,serves_per_day_prmeat,serves_per_day_unprmeat,serves_per_day_egg,serves_per_day_dairy,serves_per_day_swbeverage,serves_per_day_fjuice,BMI])
+                              ##,serves_per_day_starchyveg,serves_per_day_refgrain,serves_per_day_whgrain,serves_per_day_prmeat,serves_per_day_unprmeat,serves_per_day_egg,serves_per_day_dairy,serves_per_day_swbeverage,serves_per_day_fjuice,BMI])
+
 
         ##st.button("Restart1")
         submit_page4 = st.button("Restart the App", on_click=click_button)
@@ -533,7 +489,6 @@ def display_page(page_num):
             ##st.session_state["name"] = name
             st.session_state["page"] = 1  # Move to page 2 after submission
             st.experimental_rerun()
-
 
 # def calculate_risk_factor(serves_per_day):
 #     risk_factor = 0
