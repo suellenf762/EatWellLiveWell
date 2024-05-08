@@ -142,7 +142,7 @@ def display_page(page_num):
         st.write("")
 
         st.write("How many serves of Non Starchy Vegetables per day?")
-        st.image("nonstarchyserve.png")
+        st.image("nonstartchyserve.png")
         serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_nonstarchyveg"] = serves_per_day_nonstarchyveg
         st.write("")
