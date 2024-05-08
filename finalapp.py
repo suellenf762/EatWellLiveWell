@@ -122,7 +122,7 @@ def display_page(page_num):
         name = st.session_state["name"]
         st.write(f"{name}, what do you eat each day?")
         ##st.link_button("For more information on serving sizes please click here",
-                       "https://www.eatforhealth.gov.au/food-essentials/five-food-groups/grain-cereal-foods-mostly-wholegrain-and-or-high-cereal-fibre")
+                       ##"https://www.eatforhealth.gov.au/food-essentials/five-food-groups/grain-cereal-foods-mostly-wholegrain-and-or-high-cereal-fibre")
 
         # Define the list of food options
         food_options = [
