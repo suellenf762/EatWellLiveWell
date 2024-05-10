@@ -84,10 +84,18 @@ def display_page(page_num):
         Weight = st.number_input("Please enter your weight in kg", value=None, placeholder="Type a number eg 65...")
         st.session_state["Weight"] = Weight
 
-        st.write(height)
-        st.write(weight)
+
          ##   Height  is not None
           ##  Weight  is not None
+    if Height  is not None :
+        st.write("no")
+    elif Weight  is not None:
+        st.write("no")
+    else :    
+
+    
+
+    
         submit_page1 = st.button("Submit", on_click=click_button)
 
         if submit_page1:
