@@ -96,7 +96,7 @@ def display_page(page_num):
     
 
     
-        submit_page1 = st.button("Submit", on_click=click_button)
+            submit_page1 = st.button("Submit", on_click=click_button)
 
         if submit_page1:
             ##st.session_state["name"] = name
