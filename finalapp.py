@@ -3,11 +3,7 @@ import pandas as pd
 from sklearn.svm import SVR
 
 
-
-
-
 ##Function to display content based on page state
-
 
 def click_button():
     st.session_state.clicked = True
