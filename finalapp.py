@@ -346,7 +346,12 @@ def display_page(page_num):
         serves_per_day_fjuice = st.session_state["serves_per_day_fjuice"]
         Height = st.session_state["Height"]
         Weight = st.session_state["Weight"]
-        BMI = 51
+        if "Height" not in st.session_state:
+            st.session_state.Height = 165
+        if "Weight" not in st.session_state:
+            st.session_state.myvar = 75 
+    
+
 
         name = st.session_state["name"]
 
