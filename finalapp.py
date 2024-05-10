@@ -92,7 +92,7 @@ def display_page(page_num):
             Weight  is not None
             st.session_state["page"] = 2  # Move to page 2 after submission
             st.experimental_rerun()
-        elif:
+        else:
             st.write("Please enter in your weight and height")
 
     elif page_num == 2:
