@@ -430,6 +430,18 @@ def display_page(page_num):
                     :arrow_right:  It is recommended that your replace these servings with a more healthy option.''')
         st.markdown('''  :yum: Discretionary Foods are foods you enjoy but are unnecessary.  
                            :bubble_tea: For example sweetened beverages and processed meats''')
+
+
+        TotalServes = serves_per_day_fruit + serves_per_day_fjuice + serves_per_day_starchyveg + serves_per_day_nonstarchyveg + total_grain + leanmeat + serves_per_day_dairy + Total_discret
+        RecTotalServes = 21.5
+                if TotalServes < RecTotalServes:
+            st.write(":arrow_down: LESS serves than the recommended 21.5 serves per day.")
+        elif TotalServes == RecTotalServes:
+            st.write(":white_check_mark: The recommended serves per day.")
+        else:
+            st.write(":arrow_up: MORE to than the recommended 21.5 serves per day. Eating more serves a day without increasing your physical activity may lead to obesity which is a risk factor for diabetes.")
+
+        
 ## Thank the user for their time
         st.markdown(f"Thanks {name} for using this application and I hope you found it useful.")
 ## Offer the user another link for more information        
