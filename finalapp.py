@@ -439,7 +439,7 @@ def display_page(page_num):
         elif TotalServes == RecTotalServes:
             st.write(":white_check_mark: The recommended serves per day.")
         else:
-            st.write(":arrow_up: MORE to than the recommended 21.5 serves per day. Eating more serves a day without increasing your physical activity may lead to obesity which is a risk factor for diabetes.")
+            st.write(":arrow_up: MORE serves than the recommended 21.5 serves per day. Eating more serves a day without increasing your physical activity may lead to obesity which is a risk factor for diabetes.")
 
         
 ## Thank the user for their time
