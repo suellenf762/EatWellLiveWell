@@ -434,7 +434,7 @@ def display_page(page_num):
 
         TotalServes = serves_per_day_fruit + serves_per_day_fjuice + serves_per_day_starchyveg + serves_per_day_nonstarchyveg + total_grain + leanmeat + serves_per_day_dairy + Total_discret
         RecTotalServes = 21.5
-                if TotalServes < RecTotalServes:
+        if TotalServes < RecTotalServes:
             st.write(":arrow_down: LESS serves than the recommended 21.5 serves per day.")
         elif TotalServes == RecTotalServes:
             st.write(":white_check_mark: The recommended serves per day.")
