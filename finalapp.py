@@ -49,11 +49,6 @@ def display_page(page_num):
         st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
 
-        if "Height" not in st.session_state:
-            st.session_state.Height = 165
-        if "Weight" not in st.session_state:
-            st.session_state.Weight = 75 
-    
 
         Height = st.number_input("Please enter your height in cm", value=None, placeholder="Type a number eg 155...")
         st.session_state["Height"] = Height
@@ -292,14 +287,7 @@ def display_page(page_num):
         from sklearn.metrics import accuracy_score
 
         from sklearn.metrics import confusion_matrix
-        # import pickle
-        # model_pkl_file = "app/eatwelllivewell.pkl"
-        #
-        # with open(model_pkl_file, 'wb') as file:
-        #     pickle.dump(svm_classifier, file)
-        #
-        # with open(model_pkl_file, 'rb') as file:
-        #     model = pickle.load(file)
+
 
         model =svm_classifier
 
@@ -320,6 +308,7 @@ def display_page(page_num):
             st.session_state.Height = 165
         if "Weight" not in st.session_state:
             st.session_state.myvar = 75 
+
     
 
 
