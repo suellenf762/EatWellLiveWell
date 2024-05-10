@@ -1,63 +1,54 @@
 import streamlit as st
 import pandas as pd
 from sklearn.svm import SVR
-import base64
+
 
 
 
 
 ##Function to display content based on page state
 
-def get_base64(bin_file):
-    with open(bin_file, 'rb') as f:
-        data = f.read()
-    return base64.b64encode(data).decode()
-
-
-def set_background(png_file):
-    bin_str = get_base64(png_file)
-    page_bg_img = '''
-    <style>
-    .stApp {
-    background-image: url("data:png;base64,%s");
-    background-size: cover;
-    }
-    </style>
-    ''' % bin_str
-    st.markdown(page_bg_img, unsafe_allow_html=True)
-
 
 def click_button():
     st.session_state.clicked = True
 
-
+##PAGE 1
 def display_page(page_num):
     if page_num == 1:
-        ##set_background('background.png')
+## Put header on top of page
         st.image('Header.png')
-        ##st.title("Eat Well Live Well")
+## Advise user on purpose of the application
         st.markdown(
             '<p class="big-font">This application will be used to assess if you have any dietary risk factors for diabetes. It will ask you a series of questions regarding the types and amount of food you eat to provide a dietary risk assessment for type 2 diabetes. </p>',
             unsafe_allow_html=True)
+ ## Advise user on complications of diabetes       
         st.write("Getting treated for diabetes early can prevent the following life altering diseases:")
         st.image('complications.png')
+
+ ## Provide a Medical Disclaimer       
         st.write(
             ":warning: The information provided by this application is not intended to be a substitute for professional medical advice, diagnosis, or treatment.")
+ ## Provide a info regarding privacy          
         st.write(
             ":file_folder: The information entered in the application will not be stored or used for any other purposes.")
+ ## Ask user to enter their name and store in session state           
         name = st.text_input("Please enter your name:")
         st.session_state["name"] = name
+ ## Ask user to enter their gender and store in session state          
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
+        st.session_state["gender"] = gender
 
-
+## Ask user to enter their height and store in session state 
         Height = st.number_input("Please enter your height in cm", value=1, placeholder="Type a number eg 155...")
         st.session_state["Height"] = Height
+## Ask user to enter their weight and store in session state 
+       
         Weight = st.number_input("Please enter your weight in kg", value=1, placeholder="Type a number eg 65...")
         st.session_state["Weight"] = Weight
 
   
 
-
+## Button to go to page 2
     
         submit_page1 = st.button("Submit", on_click=click_button)
 
@@ -66,12 +57,13 @@ def display_page(page_num):
             st.session_state["page"] = 2  # Move to page 2 after submission
             st.experimental_rerun()
 
-
+## Page 2
     elif page_num == 2:
-        ##set_background('background.png')
+## Put header on top of page
         st.image('Header.png')
-        ##st.title("Eat Well Live Well")
+## Say hi to user from name store in page 1
         st.write(f"Hi {st.session_state['name']}!")
+## Outline the early signs and symptoms of diabetes       
         st.write("The early signs and symptoms of Type 2 Diabetes can include:")
 
         signs = [
@@ -82,11 +74,14 @@ def display_page(page_num):
         ]
 
         st.markdown("\n".join([f"- {sign}" for sign in signs]))
-
+## Provide warning to user if they have experienced symptoms they should seek medical advice 
         st.write(
             ":large_red_square: If you have recently started experiencing these symptoms, it is recommended that you seek medical advice as soon as possible.")
+## Provide a link to user to seek medical advice 
+        
         st.link_button("To find a GP (General Practitioner) please click here",
                        "https://www.healthdirect.gov.au/australian-health-services")
+## Button to go to Page 3         
         if st.button("NEXT"):
             st.session_state["page"] = 3
             st.experimental_rerun()
