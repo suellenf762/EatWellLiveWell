@@ -87,11 +87,11 @@ def display_page(page_num):
 
          ##   Height  is not None
           ##  Weight  is not None
-    if Height  is not None :
-        st.write("no")
-    elif Weight  is not None:
-        st.write("no")
-    else :    
+        if Height  is not None :
+            st.write("no")
+        elif Weight  is not None:
+            st.write("no")
+        else :    
 
     
 
