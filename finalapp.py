@@ -87,15 +87,14 @@ def display_page(page_num):
             st.experimental_rerun()
 
     elif page_num == 3:
-        ##set_background('background.png')
+## Put header on top of page
         st.image('Header.png')
-        ##st.title("Eat Well Live Well")
+## Say hi to user from name store in page 1
         name = st.session_state["name"]
         st.write(f"{name}, what do you eat each day?")
-        ##st.link_button("For more information on serving sizes please click here",
-                       ##"https://www.eatforhealth.gov.au/food-essentials/five-food-groups/grain-cereal-foods-mostly-wholegrain-and-or-high-cereal-fibre")
 
-        # Define the list of food options
+
+## Define the list of food options
         food_options = [
             "Eggs", "Fruit", "Non-starchy vegetable", "Starchy vegetable", "Refined grains",
             "Whole grains", "Processed meats", "Unprocessed meats", "Sweetened beverages",
@@ -104,17 +103,22 @@ def display_page(page_num):
 
 
 
-
+## Ask the user how many serves a day
+        ## Then display an image of serving sizes for each food group
+        ## Display a slider for this food group
+        ## Store the serve size in session state
+        ## Add a return
+        
 
         st.write("How many serves of fruit per day?")
         st.image("fruitserve.png")
-        serves_per_day_fruit = st.slider(f"How many serves of fruit per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_fruit = st.slider(f"How many serves of fruit per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_fruit"] = serves_per_day_fruit
         st.write("")
 
         st.write("How many serves of Non Starchy Vegetables per day?")
         st.image("nonstartchyserve.png")
-        serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_nonstarchyveg = st.slider(f"How many serves of Non Starchy Vegetables per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_nonstarchyveg"] = serves_per_day_nonstarchyveg
         st.write("")
 
@@ -122,7 +126,7 @@ def display_page(page_num):
 
         st.write("How many serves of Starchy Vegetables per day?")
         st.image("starchyvegserve.png")
-        serves_per_day_starchyveg = st.slider(f"How many serves of Starchy Vegetables per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_starchyveg = st.slider(f"How many serves of Starchy Vegetables per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_starchyveg"] = serves_per_day_starchyveg
         st.write("")
 
@@ -134,25 +138,25 @@ def display_page(page_num):
 
         st.write("How many serves of Refined Grains per day?")
         st.image("refgrainserve.png")
-        serves_per_day_refgrain = st.slider(f"How many serves of Refined Grains per day?", min_value=0, max_value=6,  help=None, label_visibility="collapsed")
+        serves_per_day_refgrain = st.slider(f"How many serves of Refined Grains per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_refgrain"] = serves_per_day_refgrain
         st.write("")
 
         st.write("How many serves of Whole Grains per day?")
         st.image("whgrainserve.png")
-        serves_per_day_whgrain = st.slider(f"How many serves of Whole Grains per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_whgrain = st.slider(f"How many serves of Whole Grains per day?", min_value=0, max_value=10,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_whgrain"] = serves_per_day_whgrain
         st.write("")
 
         st.write("How many serves of Processed Meat per day?")
         st.image("prmeatserve.png")
-        serves_per_day_prmeat = st.slider(f"How many serves of Processed Meat per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_prmeat = st.slider(f"How many serves of Processed Meat per day?", min_value=0, max_value=5,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_prmeat"] = serves_per_day_prmeat
         st.write("")
 
         st.write("How many serves of Eggs per day?")
         st.image("eggserve.png")
-        serves_per_day_egg = st.slider(f"How many serves of Eggs per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_egg = st.slider(f"How many serves of Eggs per day?", min_value=0, max_value=5,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_egg"] = serves_per_day_egg
         st.write("")
 
@@ -164,25 +168,20 @@ def display_page(page_num):
 
         st.write("How many serves of Sweetened Beverages per day?")
         st.image("swdrinkserve.png")
-        serves_per_day_swbeverage = st.slider(f"How many serves of Sweetened Beverages per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_swbeverage = st.slider(f"How many serves of Sweetened Beverages per day?", min_value=0, max_value=5,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_swbeverage"] = serves_per_day_swbeverage
         st.write("")
 
         st.write("How many serves of Fruit Juice per day?")
         st.image("fjuiceserve.png")
-        serves_per_day_fjuice = st.slider(f"How many serves of fruit juice per day?", min_value=0, max_value=4,  help=None, label_visibility="collapsed")
+        serves_per_day_fjuice = st.slider(f"How many serves of fruit juice per day?", min_value=0, max_value=5,  help=None, label_visibility="collapsed")
         st.session_state["serves_per_day_fjuice"] = serves_per_day_fjuice
         st.write("")
+
+        
         # Add a button to submit selection
         if st.button("Submit"):
-            # Calculate risk factor based on servings per day
-            # result = calculate_risk_factor(serves_per_day)
-            #
-            # # Use a trained model to predict diabetes risk
-            # risk_prediction = predict_diabetes_risk(result)
-            #
-            # st.session_state["results"] = risk_prediction
-            # st.success("Selections submitted successfully")
+
             st.session_state["page"] = 4  # Move to results page
             st.experimental_rerun()
 
