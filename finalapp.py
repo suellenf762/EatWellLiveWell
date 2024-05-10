@@ -79,24 +79,22 @@ def display_page(page_num):
         st.session_state["name"] = name
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
 
+        if "Height" not in st.session_state:
+            st.session_state.Height = 165
+        if "Weight" not in st.session_state:
+            st.session_state.myvar = 75 
+    
+
         Height = st.number_input("Please enter your height in cm", value=None, placeholder="Type a number eg 155...")
         st.session_state["Height"] = Height
         Weight = st.number_input("Please enter your weight in kg", value=None, placeholder="Type a number eg 65...")
         st.session_state["Weight"] = Weight
 
+  
 
-         ##   Height  is not None
-          ##  Weight  is not None
-        if Height  is not None :
-            st.write("no")
-        elif Weight  is not None:
-            st.write("no")
-        else :    
 
     
-
-    
-            submit_page1 = st.button("Submit", on_click=click_button)
+        submit_page1 = st.button("Submit", on_click=click_button)
 
         if submit_page1:
             ##st.session_state["name"] = name
