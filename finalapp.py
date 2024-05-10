@@ -88,8 +88,8 @@ def display_page(page_num):
 
         if submit_page1:
             ##st.session_state["name"] = name
-            Height >0
-            Weight >0
+            Height  is not None
+            Weight  is not None
             st.session_state["page"] = 2  # Move to page 2 after submission
             st.experimental_rerun()
         elif:
