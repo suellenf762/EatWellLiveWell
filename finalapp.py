@@ -50,9 +50,9 @@ def display_page(page_num):
         gender = st.radio('Gender Preference', ['Male', 'Female', 'Non-Binary'])
 
 
-        Height = st.number_input("Please enter your height in cm", value=None, placeholder="Type a number eg 155...")
+        Height = st.number_input("Please enter your height in cm", value=1, placeholder="Type a number eg 155...")
         st.session_state["Height"] = Height
-        Weight = st.number_input("Please enter your weight in kg", value=None, placeholder="Type a number eg 65...")
+        Weight = st.number_input("Please enter your weight in kg", value=1, placeholder="Type a number eg 65...")
         st.session_state["Weight"] = Weight
 
   
@@ -304,10 +304,7 @@ def display_page(page_num):
         serves_per_day_fjuice = st.session_state["serves_per_day_fjuice"]
         Height = st.session_state["Height"]
         Weight = st.session_state["Weight"]
-        if "Height" not in st.session_state:
-            st.session_state.Height = 165
-        if "Weight" not in st.session_state:
-            st.session_state.myvar = 75 
+
 
     
 
