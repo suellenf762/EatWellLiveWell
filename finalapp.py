@@ -4,36 +4,6 @@ from sklearn.svm import SVR
 import base64
 
 
-##Function to predict diabetes risk based on risk factor
-def predict_diabetes_risk(risk_factor):
-    # Assuming `svm_model` is defined and trained properly
-    svm_model = SVR(kernel='rbf')
-    # Load dataset into a dataframe
-    X_train = pd.read_csv('../data/processed/X_train.csv')
-    X_test = pd.read_csv('../data/processed/X_test.csv')
-    y_train = pd.read_csv('../data/processed/y_train.csv')
-    y_test = pd.read_csv('../data/processed/y_test.csv')
-
-    # Define features and target variable
-    features = X_train[['num__Fruits', 'num__Non-starchy vegetables',
-                        'num__Other starchy vegetables', 'num__Refined grains',
-                        'num__Whole grains', 'num__Total processed meats',
-                        'num__Unprocessed red meats', 'num__Eggs',
-                        'num__Sugar-sweetened beverages', 'num__Fruit juices',
-                        'num__Saturated fat', 'num__Monounsaturated fatty acids',
-                        'num__Added sugars', 'num__Dietary sodium', 'num__Selenium',
-                        'num__Total Milk', 'num__ObesityRate']]
-
-    target = y_train['Diabetes prevalence (% of population ages 20 to 79)']
-    # svm_model.fit(X_train, y_train)
-
-    # Create a DataFrame for prediction
-    data = pd.DataFrame({'Risk Factor': [risk_factor]})
-
-    # Make prediction
-    prediction = svm_model.predict(data)[0]  # Assuming predicting risk directly
-
-    return prediction
 
 
 ##Function to display content based on page state
